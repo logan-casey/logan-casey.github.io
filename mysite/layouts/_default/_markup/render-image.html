@@ -1,0 +1,9 @@
+{{- $src := .Destination -}}
+{{- with .Page.Resources.Get .Destination -}}
+  {{- $src = .RelPermalink -}}
+{{- else -}}
+  {{- if and (hasPrefix $src "/") (not (hasPrefix $src "//")) -}}
+    {{- $src = strings.TrimPrefix "/" $src | relURL -}}
+  {{- end -}}
+{{- end -}}
+<img src="{{ $src | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}>

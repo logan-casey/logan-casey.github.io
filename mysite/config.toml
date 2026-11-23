@@ -77,6 +77,10 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   quality = 90
   anchor = "smart"  # Anchor for cropping. Options include Smart and Center.
 
+# Store processed images in the cache restored by GitHub Actions.
+[caches.images]
+  dir = ":cacheDir/images"
+
 # Taxonomies.
 [taxonomies]
   tag = "tags"
