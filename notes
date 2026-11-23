@@ -3,6 +3,7 @@ blogdown::serve_site()
 blogdown::stop_server()
 
 
+
 Customize
 This theme is a slightly modified version of the very popular hugo-academic theme. The defaults for hugo-academic are a bit too busy for a simple job market website. Moreover, the default theme doesn’t include sections for teaching or working papers. Chase Eck, a job market candidate at the University of Arizona, introduced a few simple modifications to the theme to contain these sections and to simplify the rest. You can check out his website here: https://chase-eck.github.io.
 I used his job market website as a starting point to create a modified theme, which is what you downloaded from GitHub. If you want to see all of the edits made to the default hugo-academic theme, you can check out the Appendix section of this article.
