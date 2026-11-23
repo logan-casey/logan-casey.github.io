@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Hugo build output and generated image/CSS caches.
+/public/
+/resources/
+/.hugo_build.lock
+
+# Operating system metadata.
+.DS_Store
+Thumbs.db

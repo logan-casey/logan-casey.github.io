@@ -1,0 +1,97 @@
+setwd("mysite")
+blogdown::serve_site()
+blogdown::stop_server()
+
+
+Customize
+This theme is a slightly modified version of the very popular hugo-academic theme. The defaults for hugo-academic are a bit too busy for a simple job market website. Moreover, the default theme doesn’t include sections for teaching or working papers. Chase Eck, a job market candidate at the University of Arizona, introduced a few simple modifications to the theme to contain these sections and to simplify the rest. You can check out his website here: https://chase-eck.github.io.
+I used his job market website as a starting point to create a modified theme, which is what you downloaded from GitHub. If you want to see all of the edits made to the default hugo-academic theme, you can check out the Appendix section of this article.
+
+Now the fun begins. You get to make the website your own. Let’s start by adding personal details.
+
+Add a picture
+Place your profile picture in the content/authors/admin directory.
+Save the picture as avatar.jpg.
+Add your CV
+Add your CV to the static/files/ directory. If the file name of your pdf is not cv.pdf then you will need to alter the file name of your pdf or change the code to reflect your different file name.
+e.g., you’d need to change this in config/_default/menus.toml and in content/authors/admin/_index.md
+Edit your personal information
+Open the config/_default/params.toml file
+
+Edit lines 90-299 as you see fit.
+
+You should certainly change
+
+The title of your website to be your name (line 9)
+Organization to be your current place of study/employment (line 48)
+The site description (line 51)
+Your email address (line 91)
+Your phone number (line 92)
+Your address (line 96)
+Add your twitter handle to line 130 of
+Replace name = "DM Me" in line 115 to be name = "whatever your twitter handle is here"
+If you have a Google analytics number (for recording site-traffic) , add that to line 284
+Open the content/authors/admin/_index.md file
+
+Change the title (line 3) to be your name
+
+Change your role (line 13) to be correct (e.g., role: PhD candidate in Economics)
+
+Change your education/institutions
+
+line 17: your current institutuion (e.g., name: Big Ten University)
+lines 30-32: your PhD granting institutuion
+lines 33-35: your masters granting institutuion
+etc
+Add a link to your email address on line 48
+
+Add a link to your twitter profile on line 51
+
+Add your google scholar link on line 54
+
+Add your github link on line 57
+
+Make sure the path and filename for your cv is correct on line 63.
+
+Edit your interests on lines 24 and 25
+
+Write a longer (but not too long) bio on line 75 for the front page
+
+Write a shorter bio for line 21
+
+For most things if you comment them out, then they disappear, but be sure this is the case by looking at the local preview of your site.
+
+Add your working papers and publications
+Add any PDFs you want to share to the static/files/ directory.
+
+In the content/publication directory you’ll notice that there’s a folder for each paper on the webpage.
+
+All you need to do is create a separate folder for each paper you’d like on your webpage and in each folder make an index.md file.
+
+Everything should be really straightforward.
+
+Just make sure the publication type is set to 3 if this is a working paper and 2 if it is published.
+Also you should set the url_pdf to point to the specific pdf file (files/pdfname.pdf) or url for the paper.
+You can be really fancy here and include things like images, slides, bibtex templates, references, etc. But you can also keep it simple with a list of authors, journal names, and a paper title.
+
+Play around with the different settings to make sure it’s how you’d like.
+
+Note: If you don’t have any publications yet (which is the norm for a first time job market applicant!) then you should change line 8 of content/publications.md to be active = false instead of active = true. You should also remove the publications link from the drop down menu on the top bar by opening config/_default/menus.toml and either deleting or commenting out the following code:
+
+[[main]]
+  name = "Publications"
+  url = "#publications"
+  weight = 20
+Edit the teaching section
+Edit the content/home/teaching.md file to reflect courses you’ve taught or TA’d. 
+Publish
+Now it’s time to publish your website!
+
+First do one last build of the website using RStudio. Do this by running the blogdown::hugo_build() command. This updates the files in your public folder, the contents of which is what you will be actually sharing with the world as “your website.”
+
+Open RStudio by opening the job-market-website.Rproj file.
+Type library(blogdown) in RStudio’s console.
+Build your site by typing blogdown::serve_site() in the console.
+Check out the mobile and browser preview.
+If you’re happy with the site, shut down the server with the blogdown::stop_server() command.
+Note: If you’re having issues where the public directory is not updating. You can fix this by running blogdown::hugo_build().
